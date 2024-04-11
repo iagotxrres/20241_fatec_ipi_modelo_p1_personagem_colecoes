@@ -37,7 +37,7 @@ public class Personagem{
     }
     fome = Math.min(fome + 1, 10);
     //resolver com o ternário
-    sono = sono < 10 ? sono + 1 : sono;
+    sono = sono < 10? sono + 1 : sono;
   }
 
   void comer() {
@@ -53,7 +53,7 @@ public class Personagem{
         default:
           System.out.printf("%s comendo...\n", nome);
           --fome;
-          energia = (energia == 10 ? energia : energia + 1);
+          energia = (energia == 10? energia : energia + 1);
       }
   }
 
@@ -73,5 +73,29 @@ public class Personagem{
       "%s: (e:%d, f:%d, s:%d)",
       nome, energia, fome, sono
     );
+  }
+
+  // Adicionando o método morrer()
+  void morrer() {
+    if (energia <= 0) {
+      System.out.printf("%s morreu.\n", nome);
+    }
+  }
+
+  // Chamando o método morrer() no final do método cacar()
+  void cacar(){
+    if(energia >= 2){
+      System.out.printf("%s esta cacando...\n", nome);
+      energia -= 2; // energia = energia - 2;
+    }
+    else{
+      System.out.printf("%s sem energia para cacar...\n", nome);
+    }
+    fome = Math.min(fome + 1, 10);
+    //resolver com o ternário
+    sono = sono < 10? sono + 1 : sono;
+
+    // Chamando o método morrer()
+    morrer();
   }
 }
