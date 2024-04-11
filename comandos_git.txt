@@ -1,0 +1,3 @@
+git clone https://github.com/iagotxrres/20241_fatec_ipi_modelo_p1_personagem_colecoes .
+//  É usado sobretudo para apontar para um repositório existente e fazer um clone ou cópia deste repositório no novo diretório, em outro local.
+
